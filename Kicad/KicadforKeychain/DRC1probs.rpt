@@ -1,0 +1,110 @@
+** Drc report for KicadforKeychain.kicad_pcb **
+** Created on 2026-10-22T14:30:28 **
+** Report includes: Errors, Warnings **
+
+** Found 5 DRC violations **
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(107.2000 mm, 104.5500 mm): Reference field of Power1
+    @(105.2000 mm, 104.0500 mm): PTH pad 1 [/VSWITCH] of Power1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(107.2000 mm, 104.5500 mm): Reference field of Power1
+    @(107.2000 mm, 104.0500 mm): PTH pad 2 [/VOUT] of Power1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(107.2000 mm, 104.5500 mm): Reference field of Power1
+    @(109.2000 mm, 104.0500 mm): PTH pad 3 [unconnected-(Power1-C-Pad3)] of Power1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.4500 mm, 104.8000 mm): Reference field of Battery1
+    @(116.9500 mm, 103.0500 mm): Pad 1 [/VBAT+] of Battery1 on B.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.4500 mm, 104.8000 mm): Reference field of Battery1
+    @(116.9500 mm, 106.5500 mm): Pad 2 [/VBAT-] of Battery1 on B.Cu
+
+** Found 18 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.9500 mm, 115.3000 mm): Pad 1 [/5V] of SS14 on F.Cu
+    @(122.5400 mm, 106.5500 mm): Pad 18 [/5V] of ESP32S3supermini1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(105.2000 mm, 104.0500 mm): PTH pad 1 [/VSWITCH] of Power1
+    @(114.9500 mm, 119.3000 mm): Pad 2 [/VSWITCH] of SS14 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(139.0300 mm, 102.3000 mm): PTH pad 3 [/SCL] of Oled1
+    @(140.3200 mm, 123.5500 mm): Pad 2 [/SCL] of ESP32S3supermini1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(137.7800 mm, 123.5500 mm): Pad 3 [/SDA] of ESP32S3supermini1 on F.Cu
+    @(141.5700 mm, 102.3000 mm): PTH pad 4 [/SDA] of Oled1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(103.7000 mm, 109.5500 mm): PTH pad 1 [/datetimebtn] of showdateandtime1
+    @(103.7000 mm, 116.0500 mm): PTH pad 1 [/datetimebtn] of showdateandtime1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(103.7000 mm, 116.0500 mm): PTH pad 1 [/datetimebtn] of showdateandtime1
+    @(130.1600 mm, 123.5500 mm): Pad 6 [/datetimebtn] of ESP32S3supermini1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(103.7000 mm, 120.5500 mm): PTH pad 1 [/wifibtn] of enablewifi1
+    @(103.7000 mm, 127.0500 mm): PTH pad 1 [/wifibtn] of enablewifi1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(127.6200 mm, 123.5500 mm): Pad 7 [/wifibtn] of ESP32S3supermini1 on F.Cu
+    @(103.7000 mm, 120.5500 mm): PTH pad 1 [/wifibtn] of enablewifi1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(127.6200 mm, 106.5500 mm): Pad 16 [/3V3] of ESP32S3supermini1 on F.Cu
+    @(136.4900 mm, 102.3000 mm): PTH pad 2 [/3V3] of Oled1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(108.2000 mm, 109.5500 mm): PTH pad 2 [/GND] of showdateandtime1
+    @(108.2000 mm, 116.0500 mm): PTH pad 2 [/GND] of showdateandtime1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(108.2000 mm, 109.5500 mm): PTH pad 2 [/GND] of showdateandtime1
+    @(125.0800 mm, 106.5500 mm): Pad 17 [/GND] of ESP32S3supermini1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(108.2000 mm, 116.0500 mm): PTH pad 2 [/GND] of showdateandtime1
+    @(108.2000 mm, 120.5500 mm): PTH pad 2 [/GND] of enablewifi1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(108.2000 mm, 120.5500 mm): PTH pad 2 [/GND] of enablewifi1
+    @(108.2000 mm, 127.0500 mm): PTH pad 2 [/GND] of enablewifi1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(133.9500 mm, 102.3000 mm): PTH pad 1 [/GND] of Oled1
+    @(125.0800 mm, 106.5500 mm): Pad 17 [/GND] of ESP32S3supermini1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(140.6000 mm, 112.4000 mm): Pad 4 [/GND] of TP4056 on B.Cu
+    @(133.9500 mm, 102.3000 mm): PTH pad 1 [/GND] of Oled1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.2000 mm, 104.0500 mm): PTH pad 2 [/VOUT] of Power1
+    @(140.5000 mm, 126.1000 mm): Pad 3 [/VOUT] of TP4056 on B.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(116.9500 mm, 103.0500 mm): Pad 1 [/VBAT+] of Battery1 on B.Cu
+    @(140.5000 mm, 122.9000 mm): Pad 1 [/VBAT+] of TP4056 on B.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(116.9500 mm, 106.5500 mm): Pad 2 [/VBAT-] of Battery1 on B.Cu
+    @(140.5000 mm, 115.9000 mm): Pad 2 [/VBAT-] of TP4056 on B.Cu
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

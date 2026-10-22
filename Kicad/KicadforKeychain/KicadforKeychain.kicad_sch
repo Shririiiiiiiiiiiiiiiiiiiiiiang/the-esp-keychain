@@ -1439,6 +1439,680 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "SDA"
+		(exclude_from_sim no)
+		(at 205.74 119.634 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0ed0fe36-5b63-4c8a-8f6e-fe7e80892d87")
+	)
+	(text "out-"
+		(exclude_from_sim no)
+		(at 135.89 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1e37bcfc-5015-48ca-b6cc-681dcc02e4be")
+	)
+	(text "SCL"
+		(exclude_from_sim no)
+		(at 204.978 117.602 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4ce0f41c-06f1-45a6-89c7-677a9fbedf01")
+	)
+	(text "gnd\n"
+		(exclude_from_sim no)
+		(at 204.978 88.138 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "53c47f69-03d7-4640-bf41-1b878a22f8fa")
+	)
+	(text "out+"
+		(exclude_from_sim no)
+		(at 135.382 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5ca31277-4eec-484a-8935-6be264921411")
+	)
+	(text "VCC"
+		(exclude_from_sim no)
+		(at 205.232 114.046 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6005bcc4-c25d-4d97-8e70-ca3218b04ee8")
+	)
+	(text "b+"
+		(exclude_from_sim no)
+		(at 136.652 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7ade9e54-c18a-4689-8aba-158649f79068")
+	)
+	(text "gnd"
+		(exclude_from_sim no)
+		(at 203.962 73.152 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7b61aa34-b369-4fe8-8138-d180e1cb6d33")
+	)
+	(text "b-"
+		(exclude_from_sim no)
+		(at 136.906 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "90ab7ef4-abfc-47e7-a66c-ba80f26dbd51")
+	)
+	(text "wifist"
+		(exclude_from_sim no)
+		(at 192.024 73.152 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "921a8b5d-4ec1-4aec-81cf-e425b682a950")
+	)
+	(text "output\n"
+		(exclude_from_sim no)
+		(at 106.426 74.422 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a3352df2-da4b-4641-b1e7-8305a9e4784c")
+	)
+	(text "Bat-\n"
+		(exclude_from_sim no)
+		(at 100.076 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cd2c17ed-b051-4129-ab24-2967b5baed8b")
+	)
+	(text "GND"
+		(exclude_from_sim no)
+		(at 205.486 112.014 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d35f09bf-2eca-4bbd-b3d0-2af477754432")
+	)
+	(text "Bat+\n"
+		(exclude_from_sim no)
+		(at 100.076 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "eb51a031-c424-471b-baad-cfb047179e9c")
+	)
+	(text "Input"
+		(exclude_from_sim no)
+		(at 91.948 80.264 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f44167e1-cda5-4b5f-8517-03e7c1ca7889")
+	)
+	(text "datetimeshow"
+		(exclude_from_sim no)
+		(at 192.024 87.884 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f7cf8e5c-2720-4ede-9fd6-71390e8c62c6")
+	)
+	(no_connect
+		(at 106.68 81.28)
+		(uuid "4b4b6a51-a819-475a-a4f6-09745bb38e72")
+	)
+	(wire
+		(pts
+			(xy 195.58 119.38) (xy 198.12 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11d975d2-bf30-48cc-b14e-57bac3bef6d6")
+	)
+	(wire
+		(pts
+			(xy 161.29 95.25) (xy 163.83 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1201901e-d497-4cf5-b0c0-01aa8ad87666")
+	)
+	(wire
+		(pts
+			(xy 195.58 116.84) (xy 198.12 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "250d9a92-1eca-475e-bf02-f856ce429914")
+	)
+	(wire
+		(pts
+			(xy 143.51 67.31) (xy 146.05 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "328cc9cd-6ba9-4ab4-b95e-940918155d71")
+	)
+	(wire
+		(pts
+			(xy 107.95 50.8) (xy 110.49 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "388886d6-d87e-4ef3-b9f4-f17c0696870b")
+	)
+	(wire
+		(pts
+			(xy 91.44 78.74) (xy 93.98 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a4a06ea-cbd3-4a8a-a78a-3c958a04f7af")
+	)
+	(wire
+		(pts
+			(xy 104.14 76.2) (xy 106.68 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62df057e-af3f-43d4-acc7-ca320901db7d")
+	)
+	(wire
+		(pts
+			(xy 104.14 113.03) (xy 106.68 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72725c1a-3413-48d9-9485-5f0e61adb3f9")
+	)
+	(wire
+		(pts
+			(xy 204.47 90.17) (xy 207.01 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73c4ab2b-77e9-450c-a4e2-3187459284c3")
+	)
+	(wire
+		(pts
+			(xy 138.43 97.79) (xy 140.97 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92efa157-d474-4b08-a808-98390960f711")
+	)
+	(wire
+		(pts
+			(xy 203.2 74.93) (xy 205.74 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96f0e995-7c3d-48d6-bd16-fe73206128a7")
+	)
+	(wire
+		(pts
+			(xy 195.58 111.76) (xy 198.12 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b6af7ec-8540-43d6-991b-41f7cfa2f5f1")
+	)
+	(wire
+		(pts
+			(xy 161.29 100.33) (xy 163.83 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ff692f8-0fde-48a8-a7c1-5352cb3e1a0d")
+	)
+	(wire
+		(pts
+			(xy 143.51 59.69) (xy 146.05 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0c46a07-92b7-4716-a772-eee58e46c415")
+	)
+	(wire
+		(pts
+			(xy 107.95 53.34) (xy 110.49 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1f37cd1-3de2-4c0a-9e92-dc6cfeec0d26")
+	)
+	(wire
+		(pts
+			(xy 143.51 64.77) (xy 146.05 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6d6ded3-d10e-49e1-9ace-9ab23cda5632")
+	)
+	(wire
+		(pts
+			(xy 143.51 62.23) (xy 146.05 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba7b214f-1020-47d4-be2e-679b201d505b")
+	)
+	(wire
+		(pts
+			(xy 195.58 114.3) (xy 198.12 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb48f241-1230-416e-a551-28d3c4f9c353")
+	)
+	(wire
+		(pts
+			(xy 138.43 100.33) (xy 140.97 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be88e75d-cc99-4ba1-908a-89394581561e")
+	)
+	(wire
+		(pts
+			(xy 161.29 102.87) (xy 163.83 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c65611c2-67c5-4fda-bc60-fcf2be2c6dfe")
+	)
+	(wire
+		(pts
+			(xy 114.3 113.03) (xy 116.84 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd400d9a-1094-41cb-b6d3-110f616b735e")
+	)
+	(wire
+		(pts
+			(xy 138.43 95.25) (xy 140.97 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce68a4a0-f3bd-4ac2-b619-bfa7c88ffcdd")
+	)
+	(wire
+		(pts
+			(xy 161.29 97.79) (xy 163.83 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eaa1d2fe-6060-46c6-8842-9d276e6c4d56")
+	)
+	(wire
+		(pts
+			(xy 190.5 74.93) (xy 193.04 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f198ff95-1c87-47b3-842c-ffc1e03a5e64")
+	)
+	(wire
+		(pts
+			(xy 191.77 90.17) (xy 194.31 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3a21c75-c1d0-4fc8-99c5-1cdf68d6e4e8")
+	)
+	(wire
+		(pts
+			(xy 104.14 81.28) (xy 106.68 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd54334d-3827-4c1b-8827-82f15d8af533")
+	)
+	(label "GND"
+		(at 207.01 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "103779ea-e65d-4b3e-acdd-8764464ca97a")
+	)
+	(label "SDA"
+		(at 163.83 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1acb440e-6379-4190-8f0e-3648f5e8d6e0")
+	)
+	(label "datetimebtn"
+		(at 163.83 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "248c9409-7b27-4f42-ad81-21487d732d58")
+	)
+	(label "5V"
+		(at 138.43 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "253f72b8-17b1-4d0d-91c7-8b9d58f26d7c")
+	)
+	(label "wifibtn"
+		(at 163.83 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "33411df9-050e-4071-bb89-e8ebf64defab")
+	)
+	(label "wifibtn"
+		(at 190.5 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3bf388a2-7af2-4c03-841f-cc7929c56f3a")
+	)
+	(label "datetimebtn"
+		(at 191.77 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3cf5952d-3c72-4619-a22d-fbf413009f48")
+	)
+	(label "VBAT+"
+		(at 110.49 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "487ffbbb-ccf9-4ab2-ba1b-a08536030be8")
+	)
+	(label "VOUT"
+		(at 146.05 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4906bbff-eee9-4175-a600-4514f056f01b")
+	)
+	(label "VBAT-"
+		(at 110.49 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7204bb4c-cb58-4a4b-83bd-049b50ecfeaa")
+	)
+	(label "3V3"
+		(at 195.58 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "74046959-fd90-41c9-82cd-cfefeece4d76")
+	)
+	(label "VBAT+"
+		(at 146.05 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "75ccb485-21ee-4980-9494-e201093c45dd")
+	)
+	(label "GND"
+		(at 195.58 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7611db7f-68d8-4cdd-bae3-8a105297e099")
+	)
+	(label "VOUT"
+		(at 91.44 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8176bb8c-e49d-4821-ad23-45aa57c642a3")
+	)
+	(label "GND"
+		(at 205.74 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "916de07d-d99a-4a3a-802e-48b384dfb01f")
+	)
+	(label "SCL"
+		(at 195.58 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "983ca7a9-02bf-4b45-9f5c-5028228f6dd5")
+	)
+	(label "SCL"
+		(at 163.83 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a05f6949-2a78-4d9c-90f8-bbf6b91e2166")
+	)
+	(label "VBAT-"
+		(at 146.05 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a1d4bdb9-8655-4529-bf35-10000240e085")
+	)
+	(label "VSWITCH"
+		(at 116.84 113.03 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aca4eb2d-e2a4-4295-96aa-0d0a9c401970")
+	)
+	(label "SDA"
+		(at 195.58 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b43535b9-3167-4b23-84f0-d6586b414ef5")
+	)
+	(label "3V3"
+		(at 138.43 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b8c7b4e8-e0b4-4e41-9053-3ac509c064da")
+	)
+	(label "VSWITCH"
+		(at 106.68 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d28750d7-a044-4283-ae76-be8d57a9b941")
+	)
+	(label "GND"
+		(at 146.05 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d588b9f1-966e-460d-8b57-1a662c41b1a5")
+	)
+	(label "GND"
+		(at 138.43 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e4d5c064-037a-4bfd-a50b-4aaa43c6a42b")
+	)
+	(label "5V"
+		(at 104.14 113.03 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eaf02f46-a6f3-4b18-a6a7-e72994724b4e")
+	)
 	(symbol
 		(lib_id "Device:D_Schottky")
 		(at 110.49 113.03 0)
@@ -1471,7 +2145,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SMA"
 			(at 110.49 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -1551,7 +2225,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Keychain:tp4056"
 			(at 138.43 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -1617,7 +2291,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "69a8b0d2-7fc9-42a2-8fcf-6ce37df74e48")
-		(property "Reference" "Power"
+		(property "Reference" "Power1"
 			(at 99.06 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1637,7 +2311,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm"
+		(property "Footprint" "Keychain:slideswitch"
 			(at 99.06 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -1682,7 +2356,7 @@
 		(instances
 			(project "KicadforKeychain"
 				(path "/4f3b626f-71f3-463d-bd9c-9849e80f1704"
-					(reference "Power")
+					(reference "Power1")
 					(unit 1)
 				)
 			)
@@ -1700,7 +2374,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b733c40-69f3-4c51-b12c-3a84c7a2ae3d")
-		(property "Reference" "Battery"
+		(property "Reference" "Battery1"
 			(at 103.505 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1720,7 +2394,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Keychain:Battery"
 			(at 102.87 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -1762,7 +2436,7 @@
 		(instances
 			(project "KicadforKeychain"
 				(path "/4f3b626f-71f3-463d-bd9c-9849e80f1704"
-					(reference "Battery")
+					(reference "Battery1")
 					(unit 1)
 				)
 			)
@@ -1780,7 +2454,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "72201679-4ea4-4842-aa1f-977c88fb7c7f")
-		(property "Reference" "showdateandtime"
+		(property "Reference" "showdateandtime1"
 			(at 199.39 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1800,7 +2474,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
 			(at 199.39 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -1842,7 +2516,7 @@
 		(instances
 			(project "KicadforKeychain"
 				(path "/4f3b626f-71f3-463d-bd9c-9849e80f1704"
-					(reference "showdateandtime")
+					(reference "showdateandtime1")
 					(unit 1)
 				)
 			)
@@ -1860,7 +2534,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b6aa17c-a2cd-4c4e-9080-f71f613122e8")
-		(property "Reference" "enablewifi"
+		(property "Reference" "enablewifi1"
 			(at 198.12 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1880,7 +2554,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:Nidec_Copal_CAS-120A"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
 			(at 198.12 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -1922,7 +2596,7 @@
 		(instances
 			(project "KicadforKeychain"
 				(path "/4f3b626f-71f3-463d-bd9c-9849e80f1704"
-					(reference "enablewifi")
+					(reference "enablewifi1")
 					(unit 1)
 				)
 			)
@@ -1960,7 +2634,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-C3-WROOM-02"
+		(property "Footprint" "Keychain:ESP32S3mini"
 			(at 151.13 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -2035,7 +2709,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bd8ae125-2458-4b74-b3c7-996c5621b526")
-		(property "Reference" "Oled"
+		(property "Reference" "Oled1"
 			(at 204.47 114.2999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2057,7 +2731,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Display:ER_OLEDM0.91_1x-I2C"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 203.2 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -2105,7 +2779,7 @@
 		(instances
 			(project "KicadforKeychain"
 				(path "/4f3b626f-71f3-463d-bd9c-9849e80f1704"
-					(reference "Oled")
+					(reference "Oled1")
 					(unit 1)
 				)
 			)
