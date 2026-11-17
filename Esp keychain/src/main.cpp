@@ -54,7 +54,7 @@ char buf[24];
  screen.drawStr((128 - screen.getStrWidth(buf)) / 2, 42, buf);
 
 
- 
+
 }
 
 
@@ -106,7 +106,6 @@ void loop() {
   screen.clearBuffer();
   if(showClock) drawtime();
   else drawAnimation();
-  drawAnimation();
   screen.sendBuffer();
 
 
