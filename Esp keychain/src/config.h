@@ -8,7 +8,6 @@ const int TIMEDATE_BTN = 2;
 
 const char* const start_text = "Hellooooo";
 const int framepause_MS = 100;
-const int pixls_pf = 3;
 const unsigned long but_press = 30;
 
 const char* const time_zone = "IST-5:30";
