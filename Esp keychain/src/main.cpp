@@ -1,18 +1,92 @@
 #include <Arduino.h>
+#include <Wire.h>
+#include <U8g2lib.h>
+#include <time.h>
+#include <sys/time.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#include "config.h"
+
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C screen(U8G2_R0, U8X8_PIN_NONE);
+
+bool showClock = false;
+bool timeset = false;
+unsigned long lastframe = 0;
+int scrollX = 128;
+
+void drawAnimation() {
+  screen.setFont(u8g2_font_ncenB10_tr);
+  screen.drawStr(scrollX, 36, start_text);
+  scrollX -= scroll_speed;
+  if(scrollX < -screen.getStrWidth(start_text)) scrollX = 128;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(115200);
+  Wire.begin(OLED_SDA, OLED_SCL);
+  screen.begin();
 }
-
 void loop() {
-  // put your main code here, to run repeatedly:
+  unsigned long now = millis();
+  if(now - lastframe < framepause_MS) return;
+  lastframe = now;
+
+  screen.clearBuffer();
+  drawAnimation();
+  screen.sendBuffer();
+  
+
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
