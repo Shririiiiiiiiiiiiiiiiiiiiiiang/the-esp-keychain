@@ -53,6 +53,8 @@ char buf[24];
  screen.setFont(u8g2_font_logisoso20_tr);
  screen.drawStr((128 - screen.getStrWidth(buf)) / 2, 42, buf);
 
+
+ 
 }
 
 
