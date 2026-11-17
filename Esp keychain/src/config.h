@@ -18,3 +18,5 @@ const int fk_day = 21;
 const int fk_hour = 15;
 const int fk_min = 17;  
 const int scroll_speed = 3;
+const char* const hotspot_name = "shrirang's-keychain";
+const char* const hotspot_pass = "ShRiRaNg27";
