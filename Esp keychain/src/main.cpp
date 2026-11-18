@@ -5,6 +5,7 @@
 #include <sys/time.h>
 #include <WiFi.h>
 #include <WebServer.h>
+#include <LittleFS.h>
 #include "config.h"
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C screen(U8G2_R0, U8X8_PIN_NONE);
@@ -21,6 +22,7 @@ bool cplastread = HIGH;
 bool cpstableread = HIGH;
 unsigned long cplastchange = 0;
 WebServer server(80);
+File upFile;
 
 void setClock(int y, int m, int d, int h, int mn) {
   struct tm t = {};
@@ -118,18 +120,55 @@ void drawWifi() {
 
 const char page[] PROGMEM = R"rawmaterial(
 <!DOCTYPE html>
-<hrml>
+<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Esp Keychainnnn </title>
 </head>
-<body style="font-family:sans-serif; text-align:ccenter;margin-top:40px">
+<body style="font-family:sans-serif; text-align:center;margin-top:40px">
 <h1>ESP keychain site</h1>
-<p> id="msg>Time sync inprocess...........</p>
+<p id="msg">Time sync inprocess...........</p>
+<h3>Add an animation</h3>
+<p>paste the ardino code from the site 1.oledanimationmaker.com and 2.animator.wokwi.com</p>
+<br>
+<p> instructions in Readme</p>
+<textarea id="code" rows="8" style="width:100%"></textarea>
+<p>
+Name <input id="name" value="animifst" size="10"><br>
+Width <input id="w" type="number" value="128" style="width:60px">
+Height <input id="h" type="number" value="64" style"width:60px">
+Delay ms <input id = "d" type="number" value="100" style="width:70px">
+<br>
+Bit order <select id="order">
+<option value="msb">Adafruit/Wowki</option>
+<option valeu="lsb">U8g2</option>
+</select>
+</p>
+<button onclick="send()">Uploadd</button>
+<p id="out"></p>
+<h2>saved</h2>
+<pre id="list"></pre>
 <script>
 fetch('/time?t=' + Math.floor(Date.now() / 1000))
 .then(r => r.text())
-.then(t => document.getElemnentById('msg).textContent = t);
+.then(t => document.getElementById('msg').textContent = t);
+
+function $(id) {return document.getElementById(id); }
+
+function showlist() {
+fetch('/list').then(r => r.text()).then(t => $('list').textContent = t);
+}
+showList();
+
+function rev(b) {
+let r=0;
+for(let i = 0; i <8; i++) r= (r <<1 ) | ((b >> i) & 1);
+return r;
+}
+
+function send() {
+}
+
 </script>
 </body>
 </html>
@@ -138,19 +177,19 @@ fetch('/time?t=' + Math.floor(Date.now() / 1000))
 
 
 void handelroot() {
-  server.send(200, "text/html, page");
+  server.send(200, "text/html", page);
 }
 
 void handeltime() {
   if(!server.hasArg("t")) {
-    server.send(400, "text", "no time went");
+    server.send(400, "text/plain", "no time went");
     return;
   }
   time_t secs = (time_t) strtoll(server.arg("t").c_str(), nullptr, 10);
   struct timeval tv = {secs, 0};
   settimeofday(&tv, nullptr);
   timeset = true;
-  server.send(20, "text/plain", "time synced, Lets goo");
+  server.send(200, "text/plain", "time synced, Lets goo");
 }
 
 
