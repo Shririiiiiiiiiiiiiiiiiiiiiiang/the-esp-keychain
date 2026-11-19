@@ -1,0 +1,94 @@
+<!--THIS CODE IS COPIED FROM MAIN>CPP TO TEST NOT WRITTEN-->
+<!--**********************************************************-->
+<!--**********************************************************-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Esp Keychainnnn </title>
+</head>
+<body style="font-family:sans-serif; text-align:center;margin-top:40px">
+<h1>ESP keychain site</h1>
+<p id="msg">Time sync inprocess...........</p>
+<h3>Add an animation</h3>
+<p>paste the ardino code from the site 1.oledanimationmaker.com and 2.animator.wokwi.com</p>
+<br>
+<p> instructions in Readme</p>
+<textarea id="code" rows="8" style="width:100%"></textarea>
+<p>
+Name <input id="name" value="animifst" size="10"><br>
+Width <input id="w" type="number" value="128" style="width:60px">
+Height <input id="h" type="number" value="64" style="width:60px">
+Delay ms <input id = "d" type="number" value="100" style="width:70px">
+<br>
+Bit order <select id="order">
+<option value="msb">Adafruit/Wowki</option>
+<option value="lsb">U8g2</option>
+</select>
+</p>
+<button onclick="send()">Uploadd</button>
+<p id="out"></p>
+<h2>saved</h2>
+<pre id="list"></pre>
+<script>
+fetch('/time?t=' + Math.floor(Date.now() / 1000))
+.then(r => r.text())
+.then(t => document.getElementById('msg').textContent = t);
+
+function $(id) {return document.getElementById(id); }
+
+function showList() {
+fetch('/list').then(r => r.text()).then(t => $('list').textContent = t);
+}
+showList();
+
+function rev(b) {
+let r=0;
+for(let i = 0; i <8; i++) r= (r <<1 ) | ((b >> i) & 1);
+return r;
+}
+
+function send() {
+const text= $('code').value.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+const mw = text.match(/FRAME_WIDTH\s*\(?\s*(\d+)/);
+const mh = text.match(/FRAME_HEIGHT\s*\(?\s*(\d+)/);
+const md = text.match(/FRAME_DELAY\s*\(?\s*(\d+)/);
+if(mw) $('w').value = mw[1];
+if(mh) $('h').value = mh[1];
+if(md) $('d').value = md[1];
+const w = +$('w').value, h = +$('h').value, d = +$('d').value;
+const size = Math.ceil(w /8) * h;
+const groups = text.match(/\{\s*(?:(?:0x[0-9a-fA-F]+|\d+)\s*,?\s*)+\}/g) || [];
+const lists = groups.map(g=> (g.match(/0x[0-9a-fA-F]+|\d+/g) || []).map(Number));
+let frames = lists.filter( f => f.length === size);
+if(frames.length === 0 && lists.length === 1 && lists[0].length > size && lists[0].length % size === 0) {
+const all = lists[0];
+for (let i = 0; i < all.length; i += size) frames.push(all.slice(i, i+size));
+}
+if(frames.length === 0) {
+$('out').textContent = 'keychain cant read the frammes, Expected ' + size + 'byte per frame, found groups of ' + lists.slice(0,5).map(f => f.length).join(',');
+return;
+}
+const name = $('name').value.replace(/[^a-zA-Z0-9_-]/g, '') || 'anim';
+const bytes = new Uint8Array(6 + frames.length * size);
+bytes.set([w, h, frames.length & 255, frames.length >> 8, d & 255, d >> 8]);
+let pos = 6;
+for(const f of frames) {
+for (const b of f) bytes[pos++] = $('order').value === 'msb' ? rev(b & 255) : (b & 255);
+
+}
+const fd = new FormData(); //Not fire dept(hc)(pls ignore)
+fd.append('file', new Blob([bytes]), name + '.anim');
+console.log('frames: ', frames.length, 'bytes each:', size);
+$('out').textContent = 'uploadingg ' + frames.length + ' frames '
+fetch('/upload', { method: 'POST', body: fd})
+.then(r => r.text())
+.then(t => { $('out').textContent = t; showList(); })
+.catch(() => $('out').textContent = 'Upload failedddd');
+}
+
+</script>
+</body>
+</html>

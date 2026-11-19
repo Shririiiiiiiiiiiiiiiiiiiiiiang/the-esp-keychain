@@ -136,12 +136,12 @@ const char page[] PROGMEM = R"rawmaterial(
 <p>
 Name <input id="name" value="animifst" size="10"><br>
 Width <input id="w" type="number" value="128" style="width:60px">
-Height <input id="h" type="number" value="64" style"width:60px">
+Height <input id="h" type="number" value="64" style="width:60px">
 Delay ms <input id = "d" type="number" value="100" style="width:70px">
 <br>
 Bit order <select id="order">
 <option value="msb">Adafruit/Wowki</option>
-<option valeu="lsb">U8g2</option>
+<option value="lsb">U8g2</option>
 </select>
 </p>
 <button onclick="send()">Uploadd</button>
@@ -155,7 +155,7 @@ fetch('/time?t=' + Math.floor(Date.now() / 1000))
 
 function $(id) {return document.getElementById(id); }
 
-function showlist() {
+function showList() {
 fetch('/list').then(r => r.text()).then(t => $('list').textContent = t);
 }
 showList();
@@ -167,6 +167,43 @@ return r;
 }
 
 function send() {
+const text= $('code').value.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+const mw = text.match(/FRAME_WIDTH\s*\(?\s*(\d+)/);
+const mh = text.match(/FRAME_HEIGHT\s*\(?\s*(\d+)/);
+const md = text.match(/FRAME_DELAY\s*\(?\s*(\d+)/);
+const ml = text.match(/lastMs\s*>=\s*(\d+)/);
+if(mw) $('w').value = mw[1];
+if(mh) $('h').value = mh[1];
+if(md) $('d').value = md[1];
+if(ml) $('d').value = ml[1];
+const w = +$('w').value, h = +$('h').value, d = +$('d').value;
+const size = Math.ceil(w /8) * h;
+const groups = text.match(/\{\s*(?:(?:0x[0-9a-fA-F]+|\d+)\s*,?\s*)+\}/g) || [];
+const lists = groups.map(g=> (g.match(/0x[0-9a-fA-F]+|\d+/g) || []).map(Number));
+let frames = lists.filter( f => f.length === size);
+if(frames.length === 0 && lists.length === 1 && lists[0].length > size && lists[0].length % size === 0) {
+const all = lists[0];
+for (let i = 0; i < all.length; i += size) frames.push(all.slice(i, i+size));
+}
+if(frames.length === 0) {
+$('out').textContent = 'keychain cant read the frammes, Expected ' + size + 'byte per frame, found groups of ' + lists.slice(0,5).map(f => f.length).join(',');
+return;
+}
+const name = $('name').value.replace(/[^a-zA-Z0-9_-]/g, '') || 'anim';
+const bytes = new Uint8Array(6 + frames.length * size);
+bytes.set([w, h, frames.length & 255, frames.length >> 8, d & 255, d >> 8]);
+let pos = 6;
+for(const f of frames) {
+for (const b of f) bytes[pos++] = $('order').value === 'msb' ? rev(b & 255) : (b & 255);
+
+}
+const fd = new FormData(); //Not fire dept(hc)(pls ignore)
+fd.append('file', new Blob([bytes]), name + '.anim');
+$('out').textContent = 'uploadingg ' + frames.length + ' frames '
+fetch('/upload', { method: 'POST', body: fd})
+.then(r => r.text())
+.then(t => { $('out').textContent = t; showList(); })
+.catch(() => $('out').textContent = 'Upload failedddd');
 }
 
 </script>
@@ -177,7 +214,7 @@ function send() {
 
 
 void handelroot() {
-  server.send(200, "text/html", page);
+  server.send(200, "text/html", page); 
 }
 
 void handeltime() {
@@ -190,6 +227,42 @@ void handeltime() {
   settimeofday(&tv, nullptr);
   timeset = true;
   server.send(200, "text/plain", "time synced, Lets goo");
+}
+
+void handleuploddata() {
+  HTTPUpload& up = server.upload();
+  if(up.status == UPLOAD_FILE_START) {
+    String path = up.filename;
+    if(!path.startsWith("/")) path = "/"  + path;
+    if(path.endsWith(".anim")) upFile = LittleFS.open(path, "w");
+  }
+  else if(up.status == UPLOAD_FILE_WRITE) {
+    if(upFile) upFile.write(up.buf, up.currentSize);
+
+  }
+  else if(up.status == UPLOAD_FILE_END) {
+    if(upFile) upFile.close();
+  }
+}
+
+void handleuploadone() {
+  server.send(200, "text/plain", "saved");
+
+}
+
+void handleList() {
+  String out = "";
+  File root = LittleFS.open("/");
+  File f = root.openNextFile();
+  while(f) {
+    String n = f.name();
+    if(n.endsWith(".anim")) out += n + " " + String(f.size()) + "bytes\n" ;
+    f = root.openNextFile();
+  }
+
+  out += "free: " + String(LittleFS.totalBytes() - LittleFS.usedBytes()) + "bytes\n";
+  server.send(200, "text/plain", out);
+
 }
 
 
@@ -214,6 +287,7 @@ void setup() {
   Serial.begin(115200);
   Wire.begin(OLED_SDA, OLED_SCL);
   screen.begin();
+  LittleFS.begin(true);
 
   setenv("TZ", time_zone, 1);
   tzset();
@@ -222,6 +296,9 @@ void setup() {
   pinMode(WIFI_BTN, INPUT_PULLUP);
   server.on("/", handelroot);
   server.on("/time", handeltime);
+  server.on("/upload", HTTP_POST, handleuploadone, handleuploddata);
+  server.on("/list", handleList);
+  
 }
 void loop() {
   if(butpressedcount() && !wifiOn) showClock = !showClock;
