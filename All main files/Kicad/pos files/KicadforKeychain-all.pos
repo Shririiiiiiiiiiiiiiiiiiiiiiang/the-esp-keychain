@@ -1,0 +1,14 @@
+### Footprint positions - created on 2026-11-20T23:35:51 ###
+### Printed by KiCad version 10.0.6
+## Unit = mm, Angle = deg.
+## Side : All
+# Ref              Val                Package                               PosX       PosY       Rot  Side
+Battery1           Conn_01x02_Pin     Battery                           -20.6000   -27.2000  -90.0000  bottom
+Power1             SW_SPDT            slideswitch                       -30.1000   -26.4500    0.0000  bottom
+TP4056             Conn_01x04_Pin     tp4056                             -7.6000   -41.7000  180.0000  bottom
+enablewifi1        SW_Push            SW_PUSH_6mm                       -33.6000   -42.9500  -90.0000  bottom
+showdateandtime1   SW_Push            SW_PUSH_6mm                       -33.6000   -31.9500  -90.0000  bottom
+ESP32S3supermini1  ~                  ESP32S3mini                        -4.5600   -37.4500    0.0000  top
+Oled1              Conn_01x04_Socket  PinHeader_1x04_P2.54mm_Vertical    -3.3500   -24.7000   90.0000  top
+SS14               D_Schottky         D_SMA                             -22.3500   -39.7000  -90.0000  top
+## End
