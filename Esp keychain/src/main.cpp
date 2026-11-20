@@ -23,6 +23,14 @@ bool cpstableread = HIGH;
 unsigned long cplastchange = 0;
 WebServer server(80);
 File upFile;
+File animFile;
+bool animLoaded;
+uint8_t animW = 0;
+uint8_t animH = 0;
+uint16_t animFrames = 0;
+uint16_t animDelay = 100;
+uint16_t animIdx = 0;
+uint8_t frameBuf[1024];
 
 void setClock(int y, int m, int d, int h, int mn) {
   struct tm t = {};
@@ -47,6 +55,48 @@ void drawAnimation() {
   if(scrollX < -screen.getStrWidth(start_text)) scrollX = 128;
 
 }
+
+uint16_t framesize() {
+  return ((animW + 7) / 8) * animH;
+
+
+}
+
+bool loadAnim(const char* path) {
+  if(animFile) animFile.close();
+  animLoaded = false;
+  if(!LittleFS.exists(path)) return false;
+  animFile = LittleFS.open(path, "r");
+  if(!animFile) return false;
+
+  uint8_t head[6];
+  if(animFile.read(head, 6) != 6) return false;
+  animW = head[0];
+  animH = head[1];
+  animFrames = head[2] | (head[3] << 8);
+  animDelay = head[4] | (head[5] << 8);
+  animIdx = 0;
+
+  if(animW == 0 || animW > 128 || animH == 0 || animH > 64 || animFrames == 0) return false;
+  if(framesize() > sizeof(frameBuf)) return false;
+  if(animDelay < min_delay_ms) animDelay = min_delay_ms;
+  animLoaded = true;
+  return true;
+
+}
+
+void drawSavedAnim() {
+  uint16_t size = framesize();
+  animFile.seek(6 + (uint32_t)animIdx * size );
+  animFile.read(frameBuf,size);
+  screen.drawXBM((128 - animW) / 2, (64 - animH) / 2, animW, animH, frameBuf);
+  animIdx = (animIdx + 1) % animFrames;
+}
+
+
+
+
+
 
 void drawtime () {
   if(!timeset) {
@@ -95,6 +145,8 @@ bool wifibtnpressed() {
 }
 
 void wifiStart() {
+  if(animFile) animFile.close();
+  animLoaded = false;
   WiFi.mode(WIFI_AP);
   WiFi.softAP(hotspot_name, hotspot_pass);
   server.begin();
@@ -106,6 +158,7 @@ void wifistop() {
   WiFi.softAPdisconnect(true);
   WiFi.mode(WIFI_OFF);
   wifiOn = false;
+  loadAnim(anim_file);
 }
 
 void drawWifi() {
@@ -288,6 +341,7 @@ void setup() {
   Wire.begin(OLED_SDA, OLED_SCL);
   screen.begin();
   LittleFS.begin(true);
+  loadAnim(anim_file);
 
   setenv("TZ", time_zone, 1);
   tzset();
@@ -309,12 +363,14 @@ void loop() {
   if(wifiOn) server.handleClient();
 
   unsigned long now = millis();
-  if(now - lastframe < framepause_MS) return;
+  unsigned long gap = (animLoaded && !showClock && !wifiOn) ? animDelay : framepause_MS;
+  if(now - lastframe < gap) return;
   lastframe = now;
 
   screen.clearBuffer();
   if(wifiOn) drawWifi();
   else if(showClock) drawtime();
+  else if(animLoaded) drawSavedAnim();
   else drawAnimation();
   screen.sendBuffer();
   

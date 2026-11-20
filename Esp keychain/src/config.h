@@ -20,3 +20,5 @@ const int fk_min = 17;
 const int scroll_speed = 3;
 const char* const hotspot_name = "shrirang's-keychain";
 const char* const hotspot_pass = "ShRiRaNg27";
+const char* const anim_file = "/animifst.anim";
+const int min_delay_ms = 15;
