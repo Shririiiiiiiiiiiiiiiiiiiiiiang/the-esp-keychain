@@ -526,7 +526,7 @@
       "netlist": "",
       "plot": "D:/The esp keychain/All main files/",
       "specctra_dsn": "",
-      "step": "../../3d models/KicadforKeychainrealfinal.step",
+      "step": "../../All main files/PCB/3d model of PCB/KicadforKeychainrealfinal.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
